@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katya | Software Developer</title>
+    <style>
+        :root {
+            --redwood: #49D6C5;
+        }
+
+        h1,
+        h2 {
+            color: var(--redwood);
+        }
+
+        a {
+            color: var(--redwood);
+        }
+
+        a:hover {
+            color: #27A99B;
+        }
+
+        :root { --dark: #102A2A; --cream: #F4F4EC; --pink: #49D6C5; }
+        body { margin: 0; background: var(--dark); color: var(--cream); font-family: Arial, sans-serif; line-height: 1.6; }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; border-bottom: 1px solid #234347; }
+        .logo { color: var(--cream); font-size: 1.4rem; font-weight: bold; text-decoration: none; }
+        nav { display: flex; gap: 24px; }
+        nav a { color: var(--cream); text-decoration: none; }
+        nav a:hover { color: var(--pink); }
+        .hero { max-width: 900px; margin: 0 auto; padding: 80px 8%; }
+        .hero h1 { margin-bottom: 8px; font-size: clamp(2.5rem, 7vw, 4.5rem); }
+        .subtitle { color: var(--pink); font-size: 1.3rem; }
+        .hero-buttons { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
+        .button { display: inline-block; padding: 12px 20px; border: 1px solid var(--redwood); border-radius: 6px; background: var(--redwood); color: white; text-decoration: none; }
+        .button-secondary { background: transparent; color: var(--cream); }
+        main { padding: 0 8% 60px; }
+        main > section { max-width: 900px; margin: 0 auto; padding: 36px 0; }
+        #projecten ul { display: flex; flex-wrap: wrap; gap: 18px; list-style: none; padding: 0; }
+        #projecten li { flex: 1 1 220px; max-width: 280px; padding: 22px; border: 1px solid #347C79; border-radius: 10px; background: #17383C; box-sizing: border-box; }
+        #projecten li a { display: block; color: var(--cream); font-size: 1.1rem; font-weight: bold; text-decoration: none; }
+        #projecten li a::after { content: " →"; color: var(--redwood); }
+        #projecten li:hover { border-color: var(--redwood); transform: translateY(-3px); transition: 180ms ease; }
+        footer { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; padding: 22px 8%; border-top: 1px solid #234347; color: var(--pink); font-size: 0.9rem; }
+        footer p { margin: 0; }
+        footer a { color: var(--cream); }
+        footer a:hover { color: var(--pink); }
+        :root { --night-blue: #102A2A; --pink-accent: #49D6C5; }
+        body { background: var(--night-blue); }
+        header { background: #0D2429; border-bottom-color: var(--pink-accent); }
+        .hero { max-width: 1100px; display: flex; align-items: center; gap: clamp(24px, 5vw, 64px); padding-top: 52px; padding-bottom: 52px; }
+        .hero-image-wrap { flex: 0 1 36%; min-width: 220px; border: 2px solid var(--pink-accent); border-radius: 12px; overflow: hidden; box-shadow: 0 0 24px #49D6C540; }
+        .hero-image { display: block; width: 100%; height: 250px; object-fit: cover; image-rendering: pixelated; }
+        .hero-copy { flex: 1; }
+        .hero h1 { font-family: "Trebuchet MS", Arial, sans-serif; font-weight: 800; letter-spacing: -0.04em; }
+        .eyebrow { color: var(--pink-accent); font-size: .8rem; font-weight: bold; letter-spacing: .12em; }
+        .hero h1 span { color: var(--pink-accent); }
+        .button { background: var(--pink-accent); border-color: var(--pink-accent); }
+        .button-secondary { background: transparent; color: var(--cream); border-color: var(--pink-accent); }
+        @media (max-width: 700px) { header { flex-wrap: wrap; gap: 16px; } nav { flex-wrap: wrap; gap: 12px 18px; } .hero { flex-direction: column; align-items: stretch; padding-top: 34px; padding-bottom: 34px; } .hero-image-wrap { min-width: 0; } .hero-image { height: auto; max-height: 320px; object-fit: cover; } }
+        .skills-section { display: grid; grid-template-columns: minmax(0, 2fr) minmax(220px, 1fr); gap: 28px; align-items: center; border-top: 1px solid var(--pink-accent); border-bottom: 1px solid var(--pink-accent); }
+        .skill-cards { display: flex; flex-wrap: wrap; gap: 12px; }
+        .skill-card { flex: 1 1 110px; min-width: 100px; padding: 14px 10px; text-align: center; border: 1px solid #347C79; border-radius: 8px; background: #17383C; }
+        .skill-card h3 { margin: 8px 0 0; color: var(--cream); font-size: 1rem; }
+        .skill-card p { margin: 2px 0 0; color: var(--pink); font-size: .8rem; }
+        .skill-symbol { display: inline-grid; place-items: center; width: 38px; height: 38px; background: var(--pink-accent); color: white; font-weight: bold; border-radius: 6px; }
+        .powerups { padding-left: 24px; border-left: 1px solid var(--pink-accent); }
+        .powerups h2 { color: var(--cream); font-size: 1.25rem; }
+        .powerups ul { padding-left: 20px; }
+        .powerups li { margin: 8px 0; }
+        @media (max-width: 700px) { .skills-section { grid-template-columns: 1fr; } .powerups { padding: 18px 0 0; border-left: 0; border-top: 1px solid var(--pink-accent); } }
+        nav a { display: inline-block; padding: 8px 16px; border: 1px solid var(--pink-accent); border-radius: 999px; transition: background-color 180ms ease, color 180ms ease, transform 180ms ease; }
+        nav a:hover { background-color: var(--pink-accent); color: #0D2429; transform: translateY(-2px); }
+        .linkedin-link { display: inline-flex; align-items: center; gap: 12px; padding: 10px 16px; border: 1px solid var(--pink-accent); border-radius: 999px; color: var(--cream); text-decoration: none; transition: background-color 180ms ease, transform 180ms ease; }
+        .linkedin-link img { display: block; width: 32px; height: 32px; object-fit: contain; }
+        .linkedin-link:hover { background: #17383C; color: var(--cream); transform: translateY(-2px); }
+        body { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='32' viewBox='0 0 24 32'%3E%3Cpath d='M3 2v25l6-6 4 9 4-2-4-8 8-1z' fill='%2349D6C5' stroke='%23F4F4EC' stroke-width='1.5' stroke-linejoin='round'/%3E%3C/svg%3E") 3 2, auto; }
+            /* Projectkaarten */
+        .projects-intro { max-width: 620px; color: #F4F4EC; }
+        .project-grid { display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px !important; }
+        #projecten .project-card { flex: initial; max-width: none; padding: 0; overflow: hidden; border-color: #347C79; background: #17383C; }
+        .project-image { display: flex !important; min-height: 190px; align-items: center; justify-content: center; overflow: hidden; }
+        .dance-preview { background: #234347; }
+        .dance-preview img { display: block; width: 100%; height: 190px; object-fit: contain; }
+        .restaurant-preview { background: linear-gradient(135deg, #102A2A, #17383C); color: #49D6C5 !important; font: bold 30px Georgia, serif !important; text-align: center; }
+        .restaurant-preview small { display: block; margin-top: 7px; color: #F4F4EC; font: 9px Arial, sans-serif; letter-spacing: 3px; }
+        #projecten .project-info { padding: 20px; }
+        #projecten .project-type { margin: 0 0 7px; color: var(--pink-accent); font-size: .75rem; font-weight: bold; letter-spacing: .12em; }
+        #projecten .project-info h3 { margin: 0 0 8px; color: var(--cream); font-size: 1.25rem; }
+        #projecten .project-info > p:not(.project-type) { min-height: 70px; color: #F4F4EC; font-size: .92rem; }
+        #projecten li a.project-link { display: inline-block; margin-top: 8px; color: var(--pink-accent); font-size: .95rem; }
+        #projecten li a.project-link::after { content: none; }
+        #projecten li a.project-image::after { content: none; }
+        #projecten li a.project-link span { padding-left: 5px; }
+        #projecten .project-card:hover { border-color: var(--pink-accent); }
+        @media (max-width: 700px) { .project-grid { grid-template-columns: 1fr; } }
+            .logo { letter-spacing: -0.04em; text-shadow: 0 0 18px #49D6C530; }
+        .logo span.logo-dot { display: inline; margin: 0; color: var(--pink-accent); font: inherit; text-shadow: 0 0 12px #49D6C5; letter-spacing: inherit; }
+        .logo span.logo-portfolio { display: inline; margin: 0; color: var(--pink-accent); font: inherit; letter-spacing: inherit; }
+    </style>
+</head>
+<body>
+    <header>
+        <a class="logo" href="#top" aria-label="Katya.portfolio">Katya<span class="logo-dot">.</span><span class="logo-portfolio">portfolio</span></a>
+        <nav aria-label="Hoofdnavigatie">
+            <a href="#over-mij">Over mij</a>
+            <a href="#vaardigheden">Vaardigheden</a>
+            <a href="#projecten">Projecten</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main id="top">
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-image-wrap">
+                <img class="hero-image" src="images/katya-pixel-art.jpg" alt="Pixel art van Katya met haar twee honden">
+            </div>
+            <div class="hero-copy">
+                <p class="eyebrow">SOFTWARE DEVELOPER · CREATIEF EN LEERGIERIG</p>
+                <h1 id="hero-title">Hallo, ik ben <span>Katya!</span></h1>
+                <p class="subtitle">Beginnend softwareontwikkelaar</p>
+                <p>Ik leer software ontwikkelen bij Syntra-MVL in België. Ik bouw stap voor stap mijn vaardigheden op met HTML, CSS en JavaScript.</p>
+                <div class="hero-buttons">
+                    <a class="button" href="#projecten">Bekijk mijn projecten</a>
+                    <a class="button button-secondary" href="mailto:katyavanrizova@yahoo.com">Neem contact op</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="over-mij">
+            <h2>Over mij</h2>
+            <p>Ik ben een beginnende softwareontwikkelaar met een passie voor het creëren van innovatieve oplossingen. Ik heb ervaring met verschillende programmeertalen en frameworks, en ik ben altijd op zoek naar nieuwe uitdagingen om mijn vaardigheden te verbeteren.</p>
+        </section>
+
+        <section id="vaardigheden" class="skills-section">
+            <div class="skills-main">
+                <p class="eyebrow">★ MIJN VAARDIGHEDEN</p>
+                <h2>Technologieën waarmee ik werk en leer</h2>
+                <div class="skill-cards">
+                    <article class="skill-card"><span class="skill-symbol">5</span><h3>HTML</h3><p>In opleiding</p></article>
+                    <article class="skill-card"><span class="skill-symbol">3</span><h3>CSS</h3><p>In opleiding</p></article>
+                    <article class="skill-card"><span class="skill-symbol">JS</span><h3>JavaScript</h3><p>In opleiding</p></article>
+                </div>
+            </div>
+            <aside class="powerups">
+                <h2>🍄 Power-ups</h2>
+                <ul>
+                    <li>Nieuwe dingen leren</li>
+                    <li>Oefenen met kleine projecten</li>
+                    <li>Problemen stap voor stap oplossen</li>
+                </ul>
+            </aside>
+        </section>
+
+        <section id="projecten">
+            <p class="eyebrow">MIJN WERK</p>
+            <h2>Projecten</h2>
+            <p class="projects-intro">Een selectie van websites die ik stap voor stap met HTML en CSS heb opgebouwd.</p>
+            <ul class="project-grid">
+                <li class="project-card">
+                    <a class="project-image dance-preview" href="../Ritmo%20Movimiento/index.html" target="_blank" rel="noopener noreferrer" aria-label="Open Ritmo Movimiento">
+                        <img src="../Ritmo%20Movimiento/logo.jpg" alt="Logo van Ritmo Movimiento">
+                    </a>
+                    <div class="project-info">
+                        <p class="project-type">DANSCLUB · WEBSITE</p>
+                        <h3>Ritmo Movimiento</h3>
+                        <p>Een warme, energieke website voor een dansclub, met dansstijlen, lesrooster en informatie over evenementen.</p>
+                        <a class="project-link" href="../Ritmo%20Movimiento/index.html" target="_blank" rel="noopener noreferrer">Bekijk project <span>↗</span></a>
+                    </div>
+                </li>
+                <li class="project-card">
+                    <a class="project-image restaurant-preview" href="../restaurant/index.html" target="_blank" rel="noopener noreferrer" aria-label="Open La Tavola">
+                        <span>La Tavola<small>RISTORANTE ITALIANO</small></span>
+                    </a>
+                    <div class="project-info">
+                        <p class="project-type">RESTAURANT · MENUKAART</p>
+                        <h3>La Tavola</h3>
+                        <p>Een Italiaanse menukaart met een donkere stijl, gouden accenten en foto’s van gerechten.</p>
+                        <a class="project-link" href="../restaurant/index.html" target="_blank" rel="noopener noreferrer">Bekijk project <span>↗</span></a>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Bekijk mijn profiel en stuur me een bericht via LinkedIn:</p>
+            <a class="linkedin-link" href="https://www.linkedin.com/in/katya-rizova-b28a54aa/" target="_blank" rel="noopener noreferrer">
+                <img src="images/images.png" alt="LinkedIn-logo">
+                <span>Bekijk mijn LinkedIn-profiel</span>
+            </a>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 Katya. Gemaakt met HTML en CSS.</p>
+        <a href="mailto:katyavanrizova@yahoo.com">Neem contact op</a>
+    </footer></body>
+</html>

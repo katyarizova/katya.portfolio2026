@@ -1,0 +1,20 @@
+/* Redwood portfolio */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 60px 24px;
+    background-color: #211F20;
+    color: #F6EFEC;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    color: #BA5B55;
+    font-size: 18px;
+    line-height: 1.6;
+}
